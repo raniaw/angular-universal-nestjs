@@ -26,4 +26,38 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+## created a clean angular project.
 
+## install @nguniversal/express-engine
+npm i --save @nguniversal/express-engine
+
+## modified node_modules/@nguniversal/express-engine/package.json
+
+removed "type": "module" and
+
+added in exports the following:
+    "./schematics/utils": {
+      "types": "./schematics/utils/index.d.ts",
+      "esm2020": "./schematics/utils/index.js",
+      "es2020": "./schematics/utils/index.js",
+      "es2015": "./schematics/utils/index.js",
+      "node": "./schematics/utils/index.js",
+      "default": "./schematics/utils/index.js"
+    }
+After this I run ng add @nestjs/ng-universal. Things are different this time and everything installs correctly and the server files are correctly installed.
+
+## start dev:ssr
+
+npm run dev:ssr 
+
+##  build
+
+npm run build:ssr
+
+## start server
+
+npm run serve:ssr
+
+## localhost
+
+http://localhost:4000
